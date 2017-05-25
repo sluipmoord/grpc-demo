@@ -1,0 +1,12 @@
+{
+  "name": "grpc-demo",
+  "version": "1.0.0",
+  "description": "Demo using open weather api to write a GRPC Server and Client",
+  "main": "client/index.js",
+  "repository": "git@github.com:sluipmoord/grpc-demo.git",
+  "author": "Gerhard Janse van Rensburg <gerhard@teamgeek.co.za>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
