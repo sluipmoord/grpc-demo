@@ -16,6 +16,7 @@ SERVER_ADDRESS = os.getenv('SERVER_ADDRESS', '[::]:50051')
 
 DAY_IN_SECONDS = 60 * 60 * 24
 
+
 class WeatherService(WeatherService_pb2_grpc.WeatherServiceServicer):
     def __init__(self):
         self.api = pyowm.OWM(OPEN_WEATHER_MAP_API_KEY)
