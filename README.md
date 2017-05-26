@@ -1,8 +1,6 @@
 # grpc-demo.io
 Demo using open weather api to write a GRPC Server and Client
 
-- install [nvm](https://github.com/creationix/nvm)
-
 ## Server
   - cd server
   - virtualenv -p python3 env
