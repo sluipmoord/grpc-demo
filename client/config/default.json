@@ -1,7 +1,7 @@
 {
   "domain": "http://localhost:3000",
   "grpc": {
-    "protoPath": "../protos/WeatherService.proto",
+    "protoPath": "./WeatherService.proto",
     "address": "localhost:50051"
   },
   "express": {

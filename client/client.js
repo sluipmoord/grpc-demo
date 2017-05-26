@@ -8,8 +8,10 @@ const grpcConfig = config.get('grpc');
 const expressCongfig = config.get('express');
 const { WeatherService } = grpc.load(grpcConfig.protoPath);
 
+const serviceAddress = process.env.SERVICE_ADDRESS || grpcConfig.address;
+
 const client = new WeatherService(
-  grpcConfig.address, grpc.credentials.createInsecure());
+  serviceAddress, grpc.credentials.createInsecure());
 
 const app = express();
 
