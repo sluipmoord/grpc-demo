@@ -16,26 +16,30 @@ const app = express();
 app.get('/weather', function (req, res, next) {
   try {
     const {
-      'city-id': cityId = 1,
+      'city-id': cityId,
       'city-name': name,
       'city-code': code
     } = req.query;
 
-    const id = toNumber(cityId);
+    let id;
+    if (cityId !== undefined) {
+      let id = toNumber(cityId);
 
-    if (!isNumber(id) || isNaN(id)) {
-      throw new Error(`city-id '${cityId}' is not a valid id`);
+      if (!isNumber(id) || isNaN(id)) {
+        throw new Error(`city-id '${cityId}' is not a valid id`);
+      }
     }
 
     client.getWeather({ id, name, code }, function (error, response) {
       if (error) {
-        throw error;
+        next(error);
+      } else {
+        res.json(response);
       }
-
-      res.json(response);
     });
 
   } catch (error) {
+    console.log('here');
     next(error);
   }
 });
