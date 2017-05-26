@@ -14,4 +14,16 @@ Demo using open weather api to write a GRPC Server and Client
   - yarn start / npm start
 
 
-Example GET request `http://localhost:3000/weather?city-name=Pretoria,city-code=za`
+Example GET request:
+`http://localhost:3000/weather?city-name=Pretoria,city-code=za`
+Response:
+```
+{
+  "temp": 18.97,
+  "pressure": 1021,
+  "humidity": 28,
+  "temp_min": 17,
+  "temp_max": 21,
+  "unit": "celsius"
+}
+```
